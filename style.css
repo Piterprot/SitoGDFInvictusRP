@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.user-img {
+    width: 50px;
+    height: 50px; 
+    border-radius: 20%; 
+    margin-right: 10px; 
+    border: 2px solid #3c7467;
+}
+
+.user-info {
+    color: #fff;
+}
+
+.user-info p {
+    margin: 0; 
+}
+
+
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #006C39;
+}
+
+
+
+.sidebar.active{
+    width: 250px;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar .top .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo {
+    opacity: 1;
+}
+
+.user p{
+    color: #fff;
+    opacity: 1;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.sidebar p {
+    opacity: 0;
+}
+
+.sidebar.active p {
+    opacity: 1;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover {
+    background-color: #FFCB04;
+    color: #12171e;
+}
+
+.sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+
+.sidebar.active ~ .main-content {
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: left 0.5s ease, width 0.5s ease; /
+}
+
+.main-content {
+    position: relative;
+    background-color: #101521;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transition: left 0.5s ease, width 0.5s ease; 
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
+
+.messaggi {
+    position: relative;
+    background-color: #1f1f1f;
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    padding: 8px 10px;
+    color: white;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+.titolo_messaggi {
+    color: #609186;
+    position: relative; 
+    margin-bottom:1%;
+}
+
+.icona {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    padding: 5px; 
+    color:white;
+    font-size:25px;
+}
+
+.contenuto_messaggi {
+    margin-bottom: 13px;
+}
+
+.checkbox{
+    height: 35px;
+    width: 35px;
+    border-radius: 7px;
+    border: 3px solid #609186;
+    background-color: #1f1f1f;
+    color:  white;
+    cursor: pointer;
+}
+.checkbox:hover{
+    border: 3px solid #264942;
+    background-color: #264942;
+}
+
+table,  td {
+    border-bottom: 1px solid rgb(126, 126, 126,0.2);
+    border-collapse: collapse;
+    color: white;
+    text-align:left;
+  }
+th{
+    background-color: #373b8a;
+    color: white;
+}
+th, td {
+    padding: 15px;
+  }
+tr{
+    border-bottom: 1px solid rgb(126, 126, 126,0.2);
+}
