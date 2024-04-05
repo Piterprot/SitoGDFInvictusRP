@@ -2,7 +2,7 @@
 <html lang="en" >
 <html>
 <head>
-  <title>Login GDF- Invictus RP</title>
+  <title>Login GDF - Invictus RP</title>
   <link rel="icon" type="image/x-icon" href="../img/logoGDF.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -15,31 +15,94 @@
 	
   <div class="login-page">
     <div class="form">
-    <img src="../img/grifone_nuovo.webp" alt="Grifone" style=" width: 150px; height: 150px; margin-bottom: 0%;">
+    <img src="../img/grifone_nuovo.webp" alt="Grifone" style=" width: 220px; height: 220px; margin-bottom: 0%;">
 
     <h2 id="scrittagdf"> Guardia di Finanza</h2>
 
-    <form>
-      <input type="text" placeholder="&#xf007;  username"/>
-      <input type="password" id="password" placeholder="&#xf023;  password"/>
-      <i class="fas fa-eye" onclick="show()"></i> 
-      <br>
-      <br>
-      <button>LOGIN</button>
-    </form>
+    
+    <label for="nomeAzienda">Nome Azienda:</label>
+    <input type="text" id="nomeAzienda" name="nomeAzienda"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <button onclick="effettuaLogin()">Login</button>
+
   </div>
 </div>
 
-  <script>
-    function show(){
-      var password = document.getElementById("password");
-      if(password.type === "password"){
-        password.type = "text";
-      }
-      else {
-        password.type = "password";
-      }
-    };
-  </script>
+
 </body>
 </html>
+
+<script>
+
+function show(){
+  var password = document.getElementById("password");
+  if(password.type === "password"){
+    password.type = "text";
+  }
+  else {
+    password.type = "password";
+  }
+};
+
+/*
+function login(){
+  //let username = document.getElementById("inserisciUsername").value;
+  let password = document.getElementById("inserisciPassword").value;
+
+  fetch('credenziali.json')
+  .then(response => response.json()) 
+  .then(data => {
+
+    var azienda = data.aziende.find(a => a.nome === nomeAzienda);
+
+    if (!azienda) {
+        alert("Azienda non trovata");
+        return;
+      }
+
+      if (azienda.password === password) {
+        alert("Accesso effettuato con successo");
+        // Effettua il reindirizzamento o le operazioni necessarie per l'accesso
+      } else {
+        alert("Password errata");
+      }
+
+  })  */ 
+
+
+  function effettuaLogin() {
+  let  nomeAzienda = document.getElementById("nomeAzienda").value;
+  let password = document.getElementById("password").value;
+
+  fetch('aziende.json')
+    .then(response => response.json())
+    .then(data => {
+      var azienda = data.aziende.find(a => a.nome === nomeAzienda);
+
+      if (!azienda) {
+        alert("Azienda non trovata");
+        return;
+      }
+
+      if (azienda.password === password) {
+        alert("Accesso effettuato con successo");
+      } else {
+        alert("Password errata");
+      }
+    })
+    .catch(error => {
+      console.error('Si è verificato un errore:', error);
+    });
+}
+
+
+  if(username == "admin" && password == "admin"){
+    alert("Login effettuato con successo!");
+   console.log("Ipsum")
+  }
+  else{
+    alert("Username o password errati!");
+  } 
+
+</script>
