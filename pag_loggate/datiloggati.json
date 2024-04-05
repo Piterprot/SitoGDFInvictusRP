@@ -1,0 +1,16 @@
+[
+
+    {
+        "nome": "Azienda 1",
+        "n. Fatture": 0,
+        "totFatturato": 0,
+        "percentualeIva": 22
+    }, 
+    {
+        "nome": "Azienda 2",
+        "n. Fatture": 0,
+        "totFatturato": 0,
+        "percentualeIva": 22
+    }
+
+]

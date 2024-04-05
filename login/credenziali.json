@@ -8,6 +8,11 @@
     "nome": "Azienda 2",
     "numero": 2222,
     "password": "Ipsum"
+  }, 
+  {
+    "nome": "Azienda 3",
+    "numero": 3333,
+    "password": "Dolor"
   }
 ]
 

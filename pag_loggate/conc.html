@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardia di Finanza - Invictus RP</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="img/logoGDF.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../img/logoGDF.png">
 </head>
 <body>
     <div class="sidebar active">
         <div class="top">
            <div class="logo">
-            <img src="img/logoGDF.png" width="40" height="40">
+            <img src="../img/logoGDF.png" width="40" height="40">
                 
                 <span style="margin-left: 5%; font-weight: bold;"> Guardia di Finanza</span>
            </div>
@@ -43,22 +43,58 @@
                     <span class="nav-item">Concorsi</span>
                 </a>
             </li> 
+
             <li>
-                <a href="./login/selLogin.html">
+                <a href="../index.html">
                     <i class="bx bx-log-in"></i>
-                    <span class="nav-item">Accedi</span>
+                    <span class="nav-item">File Utili</span>
                 </a>
-            </li>          
+            </li>
+            
+
+            <li>
+                <a href="../index.html">
+                    <i class="bx bx-log-in"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+            </li>
+
         </ul>
     </div>
     
     <div class="main-content">
         <div class="content">
-            <h1 style="color:white">Gerarchia</h1>
-
+            <h1 style="color:white">Gestione Concessionario</h1>
         </div>
 
     </div>
-    
+
 </body>
 </html>
+
+
+<script>
+
+    function Calcolo(){
+
+        
+        let requestURL = 'datiloggati.json';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        let aggiungi = 1000; 
+
+    request.onload = function (){
+    const classe = request.response;
+    classe[1].totFatturato = 1000; 
+    console.log(classe[1].totFatturato);
+
+
+
+    }
+}
+
+
+</script>

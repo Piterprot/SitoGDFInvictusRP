@@ -35,17 +35,6 @@
 </html>
 
 <script>
-function show(){
-  var password = document.getElementById("password");
-  if(password.type === "password"){
-    password.type = "text";
-  }
-  else {
-    password.type = "password";
-  }
-};
-
-
 function Login(){
 
   let requestURL = 'credenziali.json';
@@ -62,21 +51,18 @@ function Login(){
 
     switch(numeroToInt){
       case 1111: 
-        alert("Debug Attivo!")
         if(password == classe[0].password){
-         alert("Password Corretta!");
+          window.location.href = "../pag_loggate/conc.html";
         }
         else{
-          alert("Password errata");
+          alert("Nome utente o password errati");
         }
         break;
       case 2222: 
-        alert("Debug Attivo!")
         if(password == classe[1].password){
-         alert("Password Corretta!");
         }
         else{
-          alert("Password errata");
+          alert("Nome utente o password errati");
         }
         break;
     }
@@ -84,5 +70,4 @@ function Login(){
 
  }
 }
-
 </script>
