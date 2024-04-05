@@ -1,16 +1,13 @@
-{
+[
+  {
+    "nome": "Azienda 1",
+    "numero": 1111,
+    "password": "Lorem"
+  }, 
+  {
+    "nome": "Azienda 2",
+    "numero": 2222,
+    "password": "Ipsum"
+  }
+]
 
-    "aziende": [
-        {
-            "Azienda": "Lorem",
-            "NumeroAzienda1": 1,
-            "password": 1111
-        },
-        {
-            "Azienda": "Ipsum",
-            "NumeroAzienda2": 2,
-            "password": 2222
-        }
-    ]   
-
-}

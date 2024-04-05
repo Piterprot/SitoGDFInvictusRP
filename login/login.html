@@ -13,6 +13,7 @@
 
 <body class="body">
 	
+
   <div class="login-page">
     <div class="form">
     <img src="../img/grifone_nuovo.webp" alt="Grifone" style=" width: 220px; height: 220px; margin-bottom: 0%;">
@@ -24,7 +25,7 @@
     <input type="text" id="nomeAzienda" name="nomeAzienda"><br><br>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password"><br><br>
-    <button onclick="effettuaLogin()">Login</button>
+    <button onclick="Login()">Login</button>
 
   </div>
 </div>
@@ -34,7 +35,6 @@
 </html>
 
 <script>
-
 function show(){
   var password = document.getElementById("password");
   if(password.type === "password"){
@@ -45,64 +45,44 @@ function show(){
   }
 };
 
-/*
-function login(){
-  //let username = document.getElementById("inserisciUsername").value;
-  let password = document.getElementById("inserisciPassword").value;
 
-  fetch('credenziali.json')
-  .then(response => response.json()) 
-  .then(data => {
+function Login(){
 
-    var azienda = data.aziende.find(a => a.nome === nomeAzienda);
+  let requestURL = 'credenziali.json';
+  let request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
 
-    if (!azienda) {
-        alert("Azienda non trovata");
-        return;
-      }
+  request.onload = function (){
+   const classe = request.response;
+    let numero = document.getElementById("nomeAzienda").value;
+    let numeroToInt = parseInt(numero);
+    let password = document.getElementById("password").value;
 
-      if (azienda.password === password) {
-        alert("Accesso effettuato con successo");
-        // Effettua il reindirizzamento o le operazioni necessarie per l'accesso
-      } else {
-        alert("Password errata");
-      }
+    switch(numeroToInt){
+      case 1111: 
+        alert("Debug Attivo!")
+        if(password == classe[0].password){
+         alert("Password Corretta!");
+        }
+        else{
+          alert("Password errata");
+        }
+        break;
+      case 2222: 
+        alert("Debug Attivo!")
+        if(password == classe[1].password){
+         alert("Password Corretta!");
+        }
+        else{
+          alert("Password errata");
+        }
+        break;
+    }
 
-  })  */ 
 
-
-  function effettuaLogin() {
-  let  nomeAzienda = document.getElementById("nomeAzienda").value;
-  let password = document.getElementById("password").value;
-
-  fetch('aziende.json')
-    .then(response => response.json())
-    .then(data => {
-      var azienda = data.aziende.find(a => a.nome === nomeAzienda);
-
-      if (!azienda) {
-        alert("Azienda non trovata");
-        return;
-      }
-
-      if (azienda.password === password) {
-        alert("Accesso effettuato con successo");
-      } else {
-        alert("Password errata");
-      }
-    })
-    .catch(error => {
-      console.error('Si è verificato un errore:', error);
-    });
+ }
 }
-
-
-  if(username == "admin" && password == "admin"){
-    alert("Login effettuato con successo!");
-   console.log("Ipsum")
-  }
-  else{
-    alert("Username o password errati!");
-  } 
 
 </script>
