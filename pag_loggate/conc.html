@@ -6,6 +6,7 @@
     <title>Guardia di Finanza - Invictus RP</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/x-icon" href="../img/logoGDF.png">
+    <script src="../login/login.js"></script>
 </head>
 <body>
     <div class="sidebar active">
@@ -45,12 +46,11 @@
             </li> 
 
             <li>
-                <a href="../index.html">
+                <a href="fileUtili.html">
                     <i class="bx bx-log-in"></i>
                     <span class="nav-item">File Utili</span>
                 </a>
             </li>
-            
 
             <li>
                 <a href="../index.html">
@@ -63,10 +63,32 @@
     </div>
     
     <div class="main-content">
-        <div class="content">
-            <h1 style="color:white">Gestione Concessionario</h1>
-        </div>
+        <div class="dichiarazioneTasse"> 
+            <h1 >Gestione Concessionario</h1>
+            <label for="fattEmesse">N. Fatture emesse</label>
+            <input type="text" id="fattEmesse" name="fattEmesse"><br><br>
+            <label for="Importo">Importo totale</label>
+            <input type="Importo" id="Importo" name="Importo"><br><br>
+            <input type="hidden" id="conc" value="conc">
+            <button onclick="Sovrascrivo()">Carica</button>
 
+        
+            <div class="dichiarazioneTasse" style="margin-top: 2%;">
+                <h1>Dati generali</h1>
+                <br>
+                <label for="fattEmesse">Numero di fatture emesse: </label> 
+                <span id="FattEmesseConc" class="datiFatture"></span>
+                <br>
+                <br>
+                <label for="FattTotale">Fatturato totale: </label> 
+                <span id="FattTotale" class="datiFatture"></span>
+                <br> <br>
+                <label for="FattTotale">Di cui tasse: </label> 
+
+
+                
+            </div>
+        </div>
     </div>
 
 </body>
@@ -74,27 +96,35 @@
 
 
 <script>
-
     function Calcolo(){
 
-        
         let requestURL = 'datiloggati.json';
         let request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
 
-        let aggiungi = 1000; 
-
     request.onload = function (){
     const classe = request.response;
-    classe[1].totFatturato = 1000; 
-    console.log(classe[1].totFatturato);
-
-
-
     }
 }
+
+/*
+function Sovrascrivo(){
+
+    console.log(riferimento)
+    let requestURL = 'datiloggati.json';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+    request.onload = function (){
+    const db = request.response;
+    document.getElementById("FattEmesseConc").innerHTML = db[0].FattEmesse  
+    document.getElementById("FattTotale").innerHTML = db[0].totFatturato  
+    }
+} */ 
 
 
 </script>

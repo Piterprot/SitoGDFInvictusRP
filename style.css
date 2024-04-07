@@ -217,3 +217,27 @@ th, td {
 tr{
     border-bottom: 1px solid rgb(126, 126, 126,0.2);
 }
+
+/*
+.dichiarazioneTasse{
+    background-color: white;
+    width: 100vh;
+    height: 950px;
+} */ 
+
+.dichiarazioneTasse{
+    color: white;
+}
+
+.RigaBottone{
+    margin-top: 2%;
+    text-decoration: none;
+}
+
+.datiFatture{
+    font-weight: bold;
+    color: white;
+}
+
+
+

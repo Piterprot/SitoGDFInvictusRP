@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="login_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <script src="login.js"></script>
 </head>
 
 <body class="body">
@@ -34,40 +35,3 @@
 </body>
 </html>
 
-<script>
-function Login(){
-
-  let requestURL = 'credenziali.json';
-  let request = new XMLHttpRequest();
-  request.open('GET', requestURL);
-  request.responseType = 'json';
-  request.send();
-
-  request.onload = function (){
-   const classe = request.response;
-    let numero = document.getElementById("nomeAzienda").value;
-    let numeroToInt = parseInt(numero);
-    let password = document.getElementById("password").value;
-
-    switch(numeroToInt){
-      case 1111: 
-        if(password == classe[0].password){
-          window.location.href = "../pag_loggate/conc.html";
-        }
-        else{
-          alert("Nome utente o password errati");
-        }
-        break;
-      case 2222: 
-        if(password == classe[1].password){
-        }
-        else{
-          alert("Nome utente o password errati");
-        }
-        break;
-    }
-
-
- }
-}
-</script>
