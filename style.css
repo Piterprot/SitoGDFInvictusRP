@@ -239,5 +239,10 @@ tr{
     color: white;
 }
 
+#TextRiferimento{
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+}
 
 

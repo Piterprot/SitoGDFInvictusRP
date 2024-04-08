@@ -4,19 +4,24 @@
         "nome": "Azienda 1",
         "FattEmesse": 5,
         "totFatturato": 0,
-        "percentualeIva": 22
+        "percentualeIva": 22,
+        "totTassePagate": 0
     }, 
     {
         "nome": "Azienda 2",
         "FattEmesse": 0,
         "totFatturato": 0,
-        "percentualeIva": 22
+        "percentualeIva": 22,
+        "totTassePagate": 0
+
     },
     {
         "nome": "Azienda 3",
         "FattEmesse": 0,
         "totFatturato": 0,
-        "percentualeIva": 22
+        "percentualeIva": 22,
+        "totTassePagate": 0
+
     }
 
 ]

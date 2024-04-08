@@ -63,27 +63,39 @@
     </div>
     
     <div class="main-content">
-        <div class="dichiarazioneTasse"> 
-            <h1 >Gestione Concessionario</h1>
+        <div class="dichiarazioneTasse">
+            <span id="TextRiferimento">CONCESSIONARIO</span>
+            <br> 
+            <br> 
+
             <label for="fattEmesse">N. Fatture emesse</label>
             <input type="text" id="fattEmesse" name="fattEmesse"><br><br>
             <label for="Importo">Importo totale</label>
             <input type="Importo" id="Importo" name="Importo"><br><br>
-            <input type="hidden" id="conc" value="conc">
+            <label for="Importo">Data inizio Fatturazione</label>
+            <input type="date" id="DataInizio" name="DataInizio"><br><br>
+            <label for="Importo">Data Fine Fatturazione</label>
+            <input type="date" id="DataFine" name="DataFine"><br><br>
+
+
             <button onclick="Sovrascrivo()">Carica</button>
+
 
         
             <div class="dichiarazioneTasse" style="margin-top: 2%;">
                 <h1>Dati generali</h1>
                 <br>
                 <label for="fattEmesse">Numero di fatture emesse: </label> 
-                <span id="FattEmesseConc" class="datiFatture"></span>
+                <span id="FattEmesse" class="datiFatture"></span>
                 <br>
                 <br>
                 <label for="FattTotale">Fatturato totale: </label> 
                 <span id="FattTotale" class="datiFatture"></span>
                 <br> <br>
                 <label for="FattTotale">Di cui tasse: </label> 
+
+                
+
 
 
                 
@@ -93,38 +105,3 @@
 
 </body>
 </html>
-
-
-<script>
-    function Calcolo(){
-
-        let requestURL = 'datiloggati.json';
-        let request = new XMLHttpRequest();
-        request.open('GET', requestURL);
-        request.responseType = 'json';
-        request.send();
-
-    request.onload = function (){
-    const classe = request.response;
-    }
-}
-
-/*
-function Sovrascrivo(){
-
-    console.log(riferimento)
-    let requestURL = 'datiloggati.json';
-        let request = new XMLHttpRequest();
-        request.open('GET', requestURL);
-        request.responseType = 'json';
-        request.send();
-
-    request.onload = function (){
-    const db = request.response;
-    document.getElementById("FattEmesseConc").innerHTML = db[0].FattEmesse  
-    document.getElementById("FattTotale").innerHTML = db[0].totFatturato  
-    }
-} */ 
-
-
-</script>
